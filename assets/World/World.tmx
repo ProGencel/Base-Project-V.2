@@ -121,7 +121,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="Objects">
-  <object id="27" gid="4" x="608" y="1024" width="32" height="32"/>
+  <object id="27" gid="4" x="608" y="1056" width="32" height="32"/>
   <object id="28" gid="1" x="512" y="928" width="32" height="32"/>
   <object id="29" gid="1" x="832" y="832" width="32" height="32"/>
   <object id="30" gid="1" x="544" y="1248" width="32" height="32"/>

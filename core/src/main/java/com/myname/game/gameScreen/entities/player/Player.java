@@ -8,26 +8,44 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import com.myname.game.gameScreen.entities.GameEntity;
+import com.myname.game.gameScreen.states.State;
 
 public class Player extends GameEntity {
 
+    public State state;
     private float width;
     private float height;
     private TextureRegion textureRegion;
     private Fixture mainFixture;
     private PlayerRenderer playerRenderer;
+    private PlayerController playerController;
 
     public Player(TiledMap map, World world)
     {
         playerRenderer = new PlayerRenderer(this);
+        playerController = new PlayerController(this);
         position = new Vector2();
         playerRenderer.setThings(map,world);
     }
 
+    public State getState()
+    {
+        return state;
+    }
+
+    public void setState(State state)
+    {
+        this.state = state;
+    }
+
     public void render(float dt, SpriteBatch batch)
     {
+        playerController.update(dt);
         playerRenderer.render(dt,batch);
     }
+
+
+
 
 
     public Body getBody()

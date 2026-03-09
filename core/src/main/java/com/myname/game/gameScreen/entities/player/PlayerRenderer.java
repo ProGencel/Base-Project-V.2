@@ -62,7 +62,11 @@ public class PlayerRenderer {
 
     public void render(float dt, SpriteBatch batch)
     {
-        batch.draw(player.getTextureRegion(),player.getPosition().x,player.getPosition().y,player.getWidth(),player.getHeight());
+        float playerX = player.getBody().getPosition().x - UNIT_SCALE * (float) player.getTextureRegion().getRegionWidth() / 2;
+        float playerY = player.getBody().getPosition().y - UNIT_SCALE * (float) player.getTextureRegion().getRegionHeight() / 2;
+
+        batch.draw(player.getTextureRegion(),playerX,playerY,
+            player.getWidth(),player.getHeight());
     }
 
 }

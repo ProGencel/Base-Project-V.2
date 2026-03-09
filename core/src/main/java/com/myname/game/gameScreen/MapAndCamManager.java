@@ -38,8 +38,8 @@ public class MapAndCamManager {
 
     public void camRender(float dt)
     {
-        camera.position.x = player.getPosition().x;
-        camera.position.y = player.getPosition().y;
+        camera.position.x = player.getBody().getPosition().x;
+        camera.position.y = player.getBody().getPosition().y;
         camera.update();
     }
 
